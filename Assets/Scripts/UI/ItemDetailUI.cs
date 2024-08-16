@@ -63,12 +63,13 @@ public class ItemDetailUI : MonoBehaviour
                 case PropertyType.EnergyValue:
                     propertyName = "饥饿值：";
                     break;
-                case PropertyType.MentalValue:
+                /*case PropertyType.MentalValue:
                     propertyName = "精神值：";
                     break;
                 case PropertyType.SpeedValue:
                     propertyName = "速度：";
                     break;
+                */
                 case PropertyType.AttackValue:
                     propertyName = "攻击力：";
                     break;

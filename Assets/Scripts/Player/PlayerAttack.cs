@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     private NavMeshAgent playerAgent;
     public Transform sword;
     private Collider swordCollider;
+    public float attackTime = 0.3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +71,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator EnableColliderTemporarily()
     {
         swordCollider.enabled = true;
-        yield return new WaitForSeconds(0.5f); // 等待一秒
+        yield return new WaitForSeconds(attackTime); // 等待一秒
         swordCollider.enabled = false;
     }
 }

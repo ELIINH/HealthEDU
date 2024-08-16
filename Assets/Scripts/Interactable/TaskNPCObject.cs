@@ -20,7 +20,7 @@ public class TaskNPCObject : InteractableObject
 
     private void Start()
     {
-        gameTaskSO.state = GameTaskState.Waiting;
+        //gameTaskSO.state = GameTaskState.Waiting;
     }
 
     /*    protected override void Interact()
@@ -81,6 +81,8 @@ public class TaskNPCObject : InteractableObject
                 gameTaskSO.End();
                 InventoryManager.Instance.AddItem(gameTaskSO.endReward);
                 MessageUI.Instance.Show("任务已提交！");
+                //SaveGame
+                GameManager.Instance.SaveGame();
                 break;
             case GameTaskState.End:
                 break;

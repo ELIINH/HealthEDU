@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     {
         enemyAgent = GetComponent<NavMeshAgent>();
         enemyProperty = GetComponent<EnemyProperty>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
     void AttackPlayer()
     {
         animator.SetTrigger("IsAttack");
-        Debug.Log("isAttack");
+        //Debug.Log("isAttack");
         PlayerProperty playerComponent = player.GetComponent<PlayerProperty>();
         if (playerComponent != null)
         {
@@ -123,7 +123,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         enemyProperty.HP -= damage;
-
+        //Debug.Log("Enemy HP: " + enemyProperty.HP);
         if (enemyProperty.HP <= 0)
         {
             Die();

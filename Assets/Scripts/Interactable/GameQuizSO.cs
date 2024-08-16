@@ -14,7 +14,7 @@ public class GameQuizSO : ScriptableObject
         Passed,
         End
     }
-
+    public int quizID;
     public GameQuizState state = GameQuizState.Waiting;
     public DialogueEntry[] startDialogue;
     public DialogueEntry[] endPassDialogue;

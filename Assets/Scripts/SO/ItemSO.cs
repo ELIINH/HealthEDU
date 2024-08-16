@@ -40,7 +40,7 @@ public enum PropertyType
 {
     HPValue,
     EnergyValue,
-    MentalValue,
-    SpeedValue,
+    //MentalValue,
+    //SpeedValue,
     AttackValue
 }

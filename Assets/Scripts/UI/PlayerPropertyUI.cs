@@ -14,6 +14,9 @@ public class PlayerPropertyUI : MonoBehaviour
     private Image hpProgressBar;
     private TextMeshProUGUI hpText;
 
+    private Image energyBar; // 新增的能量进度条
+    private TextMeshProUGUI energyText;
+
     private Image levelProgressBar;
     private TextMeshProUGUI levelText;
 
@@ -39,6 +42,10 @@ public class PlayerPropertyUI : MonoBehaviour
         uiGameObject = transform.Find("UI").gameObject;
         hpProgressBar = transform.Find("UI/HPProgressBar/ProgressBar").GetComponent<Image>();
         hpText = transform.Find("UI/HPProgressBar/HPText").GetComponent<TextMeshProUGUI>();
+
+        energyBar = transform.Find("UI/EnergyBar/ProgressBar").GetComponent<Image>();
+        energyText = transform.Find("UI/EnergyBar/EnergyText").GetComponent<TextMeshProUGUI>();
+
         levelProgressBar = transform.Find("UI/LevelProgressBar/ProgressBar").GetComponent<Image>();
         levelText = transform.Find("UI/LevelProgressBar/LevelText").GetComponent<TextMeshProUGUI>();
 
@@ -75,8 +82,12 @@ public class PlayerPropertyUI : MonoBehaviour
 
     public void UpdatePlayerPropertyUI()
     {
-        hpProgressBar.fillAmount = pp.hpValue / 100.0f;
-        hpText.text = pp.hpValue + "/100";
+        hpProgressBar.fillAmount = pp.hpValue / pp.maxHp;
+        //Debug.Log("hpProgressBar.fillAmount: " + hpProgressBar.fillAmount);
+        hpText.text = pp.hpValue + "/" + pp.maxHp;
+
+        energyBar.fillAmount = pp.energyValue / pp.maxEnergy;
+        energyText.text = pp.energyValue + "/"+pp.maxEnergy;
 
         levelProgressBar.fillAmount = pp.currentExp*1.0f / (pp.level*30);
         levelText.text = pp.level.ToString();
@@ -84,7 +95,8 @@ public class PlayerPropertyUI : MonoBehaviour
         ClearGrid();
 
         AddProperty("饥饿值：" + pp.energyValue);
-        AddProperty("精神值：" + pp.mentalValue);
+        //AddProperty("精神值：" + pp.mentalValue);
+        AddProperty("攻击力：" + pp.attackValue);
 
         foreach (var item in pp.propertyDict)
         {
@@ -97,12 +109,12 @@ public class PlayerPropertyUI : MonoBehaviour
                 case PropertyType.EnergyValue:
                     propertyName = "饥饿值：";
                     break;
-                case PropertyType.MentalValue:
-                    propertyName = "精神值：";
-                    break;
-                case PropertyType.SpeedValue:
-                    propertyName = "速度：";
-                    break;
+               // case PropertyType.MentalValue:
+                //    propertyName = "精神值：";
+               //     break;
+                //case PropertyType.SpeedValue:
+                //    propertyName = "速度：";
+                //    break;
                 case PropertyType.AttackValue:
                     propertyName = "攻击力：";
                     break;

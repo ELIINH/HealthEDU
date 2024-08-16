@@ -39,7 +39,7 @@ public class GameTaskSO:ScriptableObject
     public void Start()
     {
         currentEnemyCount = 0;
-        state = GameTaskState.Executing;
+        //state = GameTaskState.Executing;
         EventCenter.OnEnemyDied += OnEnemyDied;
     }
 

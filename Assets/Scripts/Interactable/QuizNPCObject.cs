@@ -10,7 +10,7 @@ public class QuizNPCObject : InteractableObject
 
     private void Start()
     {
-        gameQuizSO.state = GameQuizState.Waiting;
+       // gameQuizSO.state = GameQuizState.Waiting;
     }
 
     protected override void Interact()

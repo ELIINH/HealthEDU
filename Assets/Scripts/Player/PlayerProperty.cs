@@ -7,25 +7,53 @@ public class PlayerProperty : MonoBehaviour
 {
     public Dictionary<PropertyType, List<Property>> propertyDict;
     public int hpValue=100;
-    public int energyValue=100;
+    public int maxHp=100;
+    public float energyValue=100;
+    public float maxEnergy =100;
     public int mentalValue = 100;
     public int level = 1;
     public int currentExp = 0;
     public int attackValue = 10;
 
+    public int energyDecreaseRate = 1; // 每秒减少的能量值
+    private float energyDecreaseTimer = 0f;
 
     // Start is called before the first frame update
     void Awake()
     {
         propertyDict = new Dictionary<PropertyType, List<Property>>();
         
-        propertyDict.Add(PropertyType.SpeedValue, new List<Property>());
+        //propertyDict.Add(PropertyType.SpeedValue, new List<Property>());
         //propertyDict.Add(PropertyType.AttackValue, new List<Property>());
 
-        AddProperty(PropertyType.SpeedValue, 5);
+        //AddProperty(PropertyType.SpeedValue, 5);
         //AddProperty(PropertyType.AttackValue, 20);
 
         EventCenter.OnEnemyDied += OnEnemyDied;
+    }
+
+    void Update()
+    {
+        // 每秒减少能量值
+        energyDecreaseTimer += Time.deltaTime;
+        if (energyDecreaseTimer >= 1f)
+        {
+            energyValue -= energyDecreaseRate;
+            energyDecreaseTimer = 0f;
+
+            // 确保能量值在0-maxEnergy之间
+
+            energyValue = Mathf.Clamp(energyValue, 0, maxEnergy);
+            if (energyValue == 0)
+            {
+                hpValue -= 5;
+            }
+        }
+        // 假设按下 K 键模拟玩家死亡
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Die();
+        }
     }
 
     public void UseDrug(ItemSO itemSO)
@@ -46,9 +74,9 @@ public class PlayerProperty : MonoBehaviour
             case PropertyType.EnergyValue:
                 energyValue += value;
                 return;
-            case PropertyType.MentalValue:
-                mentalValue += value;
-                return;
+            //case PropertyType.MentalValue:
+             //   mentalValue += value;
+             //   return;
             case PropertyType.AttackValue:
                 attackValue += value;
                 return;
@@ -68,9 +96,9 @@ public class PlayerProperty : MonoBehaviour
             case PropertyType.EnergyValue:
                 energyValue -= value;
                 return;
-            case PropertyType.MentalValue:
-                mentalValue -= value;
-                return;
+            //case PropertyType.MentalValue:
+            //    mentalValue -= value;
+             //   return;
         }
 
         List<Property> list;
@@ -117,5 +145,8 @@ public class PlayerProperty : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Die");
+        GameManager.Instance.LoadGame();
     }
+
+    
 }
