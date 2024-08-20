@@ -173,14 +173,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.26415092, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a74dacc9bfcf47749a8630eac3456429, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1404bccc6df90114eb3a195786762bfd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -328,7 +328,7 @@ Transform:
   - {fileID: 7598930474495664064}
   - {fileID: 2281132598578522702}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &3812120221219028000
 NavMeshAgent:
@@ -379,11 +379,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Enemy2
-  HP: 100
+  HP: 50
   maxHP: 100
   exp: 20
-  attackValue: 50
-  detectionRadius: 10
+  attackValue: 5
+  detectionRadius: 3
   attackRange: 2
   attackCooldown: 0.5
   pickableCount: 4
@@ -449,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: c57a815ed47b9c046b09f37bc57b036c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5735764
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: c57a815ed47b9c046b09f37bc57b036c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -457,11 +457,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: c57a815ed47b9c046b09f37bc57b036c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8191521
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: c57a815ed47b9c046b09f37bc57b036c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: c57a815ed47b9c046b09f37bc57b036c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -469,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: c57a815ed47b9c046b09f37bc57b036c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: c57a815ed47b9c046b09f37bc57b036c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

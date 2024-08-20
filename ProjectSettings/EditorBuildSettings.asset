@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island.unity
     guid: 5845a8e81ce07994bb6cb33df7b30988
+  - enabled: 1
+    path: Assets/Scenes/Desert.unity
+    guid: 49dfad83a620a3f4db2597c1752e660d
+  - enabled: 1
+    path: Assets/Scenes/Downtown.unity
+    guid: b496529678808534ebb1e73df89622f4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

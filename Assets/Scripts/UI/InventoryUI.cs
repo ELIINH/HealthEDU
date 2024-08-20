@@ -63,6 +63,13 @@ public class InventoryUI : MonoBehaviour
     {
         GameObject itemGo = GameObject.Instantiate(itemPrefab);
         itemGo.transform.SetParent(content.transform);
+        RectTransform rectTransform = itemGo.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            rectTransform.localScale = Vector3.one; // 设置缩放比例为 1
+            //rectTransform.anchoredPosition3D = Vector3.zero; // 根据需要调整位置
+            //rectTransform.sizeDelta = new Vector2(100, 100); // 根据需要调整大小
+        }
         ItemUI itemUI = itemGo.GetComponent<ItemUI>();
         
         itemUI.InitItem(itemSO);

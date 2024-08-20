@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadc3e373c0aaeb459345b8a8ceeb038, type: 3}
   m_Name: Quiz2
   m_EditorClassIdentifier: 
-  quizID: 1
+  quizID: 2
   state: 0
   startDialogue:
   - Name: qq

@@ -24,5 +24,5 @@ MonoBehaviour:
     Content: taskend
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
-  enemyCountNeed: 1
+  enemyCountNeed: 3
   currentEnemyCount: 1

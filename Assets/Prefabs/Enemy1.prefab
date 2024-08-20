@@ -441,12 +441,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Enemy2
   HP: 100
+  maxHP: 100
   exp: 20
-  attackValue: 50
+  attackValue: 5
   detectionRadius: 10
   attackRange: 2
   attackCooldown: 0.5
   pickableCount: 4
+  hpProgressBar: {fileID: 0}
 --- !u!136 &3166104690907515681
 CapsuleCollider:
   m_ObjectHideFlags: 0
