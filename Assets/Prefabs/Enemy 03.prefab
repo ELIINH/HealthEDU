@@ -380,8 +380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Enemy2
   HP: 50
-  maxHP: 100
-  exp: 20
+  maxHP: 80
+  exp: 30
   attackValue: 15
   detectionRadius: 3
   attackRange: 2

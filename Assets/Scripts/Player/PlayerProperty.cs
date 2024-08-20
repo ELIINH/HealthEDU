@@ -129,7 +129,7 @@ public class PlayerProperty : MonoBehaviour
         hpValue = 100;
         energyValue = 100;
         mentalValue = 100;
-        attackValue += 10;
+        attackValue += 5;
     }
 
     public void TakeDamage(int damage)
