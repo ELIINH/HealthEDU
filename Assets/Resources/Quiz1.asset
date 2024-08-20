@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Quiz1
   m_EditorClassIdentifier: 
   quizID: 1
-  state: 0
+  state: 3
   startDialogue:
   - Name: qq
     Content: start

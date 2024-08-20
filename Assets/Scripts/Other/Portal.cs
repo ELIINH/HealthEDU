@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using static GameQuizSO;
 
@@ -44,7 +45,24 @@ public class Portal : MonoBehaviour
                 // 传送玩家到目标场景
                 //把玩家位置设为传送门位置
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = transform.position;
+                //player.transform.position = transform.position;
+                ///player.transform.position = Vector3.zero;
+                if (player.transform.parent != null)
+                {
+                    player.transform.parent.position = Vector3.zero;
+                    Debug.Log("parent position set to zero");
+                    player.transform.position = Vector3.zero;
+                    //Transform parentTransform = player.transform.parent;
+                   /* foreach (Transform child in parentTransform)
+                    {
+                        child.position = Vector3.zero;
+                    }*/
+                    NavMeshAgent navMeshAgent = player.GetComponent<NavMeshAgent>();
+                    if (navMeshAgent != null)
+                    {
+                        navMeshAgent.SetDestination(Vector3.zero);
+                    }
+                }
                 SceneManager.LoadScene(targetSceneName);
             }
             else

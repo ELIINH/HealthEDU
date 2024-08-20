@@ -385,7 +385,7 @@ MonoBehaviour:
   attackValue: 15
   detectionRadius: 3
   attackRange: 2
-  attackCooldown: 0.5
+  attackCooldown: 1
   pickableCount: 4
   hpProgressBar: {fileID: 0}
 --- !u!136 &3595304060127228795

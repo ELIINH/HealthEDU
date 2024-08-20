@@ -383,9 +383,9 @@ MonoBehaviour:
   maxHP: 100
   exp: 20
   attackValue: 10
-  detectionRadius: 3
+  detectionRadius: 5
   attackRange: 2
-  attackCooldown: 0.5
+  attackCooldown: 2
   pickableCount: 4
   hpProgressBar: {fileID: 0}
 --- !u!136 &3595304060127228795
@@ -422,6 +422,18 @@ PrefabInstance:
     - target: {fileID: 4477258239138811282, guid: 20bbb36eeee9fd14681fd1a1da89b0de, type: 3}
       propertyPath: m_RootOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477258239138811282, guid: 20bbb36eeee9fd14681fd1a1da89b0de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477258239138811282, guid: 20bbb36eeee9fd14681fd1a1da89b0de, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477258239138811282, guid: 20bbb36eeee9fd14681fd1a1da89b0de, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4477258239138811282, guid: 20bbb36eeee9fd14681fd1a1da89b0de, type: 3}
       propertyPath: m_LocalPosition.x

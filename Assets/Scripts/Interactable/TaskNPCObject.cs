@@ -71,7 +71,7 @@ public class TaskNPCObject : InteractableObject
         switch (gameTaskSO.state)
         {
             case GameTaskState.Waiting:
-                gameTaskSO.Start();
+                gameTaskSO.TaskStart();
                 InventoryManager.Instance.AddItem(gameTaskSO.startReward);
                 MessageUI.Instance.Show("你接受了一个任务！");
                 break;

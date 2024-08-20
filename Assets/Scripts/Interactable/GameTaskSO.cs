@@ -36,10 +36,17 @@ public class GameTaskSO:ScriptableObject
 
     public int currentEnemyCount = 0;
 
-    public void Start()
+  /*  public void Start()
     {
         currentEnemyCount = 0;
         //state = GameTaskState.Executing;
+        EventCenter.OnEnemyDied += OnEnemyDied;
+    }*/
+
+    public void TaskStart()
+    {
+        currentEnemyCount = 0;
+        state = GameTaskState.Executing;
         EventCenter.OnEnemyDied += OnEnemyDied;
     }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890f329c209954340847801dae695014, type: 3}
   m_Name: Task1
   m_EditorClassIdentifier: 
-  state: 0
+  state: 3
   taskName: "\u7B2C\u4E00\u4E2A"
   taskDescription: "\u4ECB\u7ECD"
   taskID: 1
@@ -25,4 +25,4 @@ MonoBehaviour:
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   enemyCountNeed: 3
-  currentEnemyCount: 1
+  currentEnemyCount: 3
