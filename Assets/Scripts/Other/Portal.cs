@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static GameQuizSO;
 
 public class Portal : MonoBehaviour
 {
 
-    public List<GameTaskSO> gameTasks; // 所有任务的列表
+    public List<GameTaskSO> senceTasks; // 所有任务的列表
+    public List<GameQuizSO> senceQuizzes;
     public bool isAllTasksCompleted; // 是否所有任务都已完成
     public GameObject portalLight;
 
@@ -21,7 +23,7 @@ public class Portal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isAllTasksCompleted= GameManager.Instance.AreAllTasksQuizCompleted();
+        isAllTasksCompleted= AreAllTasksQuizCompleted();
         if (isAllTasksCompleted)
         {
             portalLight.SetActive(true);
@@ -37,9 +39,12 @@ public class Portal : MonoBehaviour
         Debug.Log("OnPortalTriggerEnter");
         if (other.CompareTag("Player"))
         {
-            if (GameManager.Instance.AreAllTasksQuizCompleted())
+            if (AreAllTasksQuizCompleted())
             {
                 // 传送玩家到目标场景
+                //把玩家位置设为传送门位置
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.position = transform.position;
                 SceneManager.LoadScene(targetSceneName);
             }
             else
@@ -50,15 +55,22 @@ public class Portal : MonoBehaviour
         }
     }
 
-    /*public bool AreAllTasksCompleted()
+    public bool AreAllTasksQuizCompleted()
     {
-        foreach (var task in gameTasks)
+        foreach (var task in senceTasks)
         {
             if (task.state != GameTaskState.End)
             {
                 return false;
             }
         }
+        foreach (var quiz in senceQuizzes)
+        {
+            if (quiz.state != GameQuizState.End)
+            {
+                return false;
+            }
+        }
         return true;
-    }*/
+    }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   taskName: "\u7B2C\u4E00\u4E2A"
   taskDescription: "\u4ECB\u7ECD"
-  taskID: 1
+  taskID: 2
   startDialogue:
   - Name: N
     Content: taskstart

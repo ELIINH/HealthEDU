@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("InventoryManager 组件未找到，请确保 Manager 物体上有一个带有 InventoryManager 组件的对象。");
         }
+        Debug.Log("awaked");
     }
 
 
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
         InitializeTaskStates();
         InitializeQuizStates();
         SaveGame();
+        Debug.Log("Start Game Saved");
     }
 
     private void InitializeTaskStates()
@@ -181,7 +183,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public bool AreAllTasksQuizCompleted()
+    /*public bool AreAllTasksQuizCompleted()
     {
         foreach (var task in gameTasks)
         {
@@ -198,5 +200,5 @@ public class GameManager : MonoBehaviour
             }
         }
         return true;
-    }
+    }*/
 }
