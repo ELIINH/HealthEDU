@@ -126,7 +126,7 @@ public class PlayerProperty : MonoBehaviour
         level++;
         hpValue = maxHp;
         energyValue = maxEnergy;
-        mentalValue = 100;
+        //mentalValue = 100;
         attackValue += 5;
         MessageUI.Instance.Show("Level UP");
     }
