@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Quiz2
   m_EditorClassIdentifier: 
   quizID: 2
-  state: 3
+  state: 0
   startDialogue:
-  - Name: qq
-    Content: start
+  - Name: Max
+    Content: 'Vita, you''re truly our hero! '
+  - Name: Max
+    Content: Before you leave, I'd like to test your knowledge about sleep
   endPassDialogue:
-  - Name: qq
-    Content: endpass
+  - Name: Tony
+    Content: Very good, Vita
+  - Name: Tony
+    Content: 'I hope you''ll be just as successful in helping everyone in the desert '
+  - Name: Tony
+    Content: Come back safely!
   endFailDialogue:
-  - Name: qq
-    Content: endfail
+  - Name: Max
+    Content: I think you need to study a bit more.
   quizEndDialogue:
-  - Name: qq
-    Content: qiuz end
+  - Name: Max
+    Content: Continue on your journey.
   quizQuestions: []
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
-  questions: {fileID: 4900000, guid: 3093e45bf46848a448cfad7d4318aac6, type: 3}
+  questions: {fileID: 4900000, guid: fdff23675d8d9c141aba2c8661e13972, type: 3}

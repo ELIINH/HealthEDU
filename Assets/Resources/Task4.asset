@@ -12,16 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890f329c209954340847801dae695014, type: 3}
   m_Name: Task4
   m_EditorClassIdentifier: 
-  state: 0
-  taskName: "\u7B2C\u4E00\u4E2A"
-  taskDescription: "\u4ECB\u7ECD"
+  state: 3
+  taskName: Tom
+  taskDescription: City
   taskID: 4
   startDialogue:
-  - Name: N
-    Content: taskstart
+  - Name: Tom
+    Content: "Hello, I\u2019m Tom, the public health officer here"
+  - Name: Tom
+    Content: Thank you for coming to our city, Vita
+  - Name: Tom
+    Content: We are currently facing a flu outbreak caused by neglecting personal
+      hygiene
+  - Name: Tom
+    Content: In addition, an unknown creature is spreading even more viruses
+  - Name: Vita
+    Content: That sounds very serious
+  - Name: Vita
+    Content: " I\u2019m here to help solve these kinds of problems"
+  - Name: Vita
+    Content: Can you tell me more about these creatures spreading the viruses?
+  - Name: Tom
+    Content: Of course. These creatures seem to be resistant to regular disinfectants
+  - Name: Tom
+    Content: "and they\u2019re rapidly multiplying in public areas"
+  - Name: Tom
+    Content: We need your help to eliminate these creatures
+  - Name: Tom
+    Content: and educate the citizens on how to maintain personal and public hygiene
   endDialogue:
-  - Name: n
-    Content: taskend
+  - Name: Vita
+    Content: We need to make sure the citizens understand
+  - Name: Vita
+    Content: how to prevent diseases and take the necessary personal hygiene measures
+  - Name: Tom
+    Content: All the citizens thank you very much
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   enemyCountNeed: 1

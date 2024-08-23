@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ItemDBManager : MonoBehaviour
 {
-    //µ¥ÀýÄ£Ê½
     public static ItemDBManager Instance { get; private set; }
 
     public ItemDBSO itemDB;
 
-    // Start is called before the first frame update
     void Start()
     {
         if(Instance!=null && Instance != this)

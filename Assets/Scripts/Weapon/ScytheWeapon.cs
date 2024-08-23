@@ -15,14 +15,6 @@ public class ScytheWeapon : Weapon
         anim = GetComponent<Animator>();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        Attack();
-    //    }
-    //}
-
     public override void Attack()
     {
         anim.SetTrigger(ANIM_PARM_ISATTACK);

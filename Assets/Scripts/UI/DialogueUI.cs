@@ -15,7 +15,6 @@ public class DialogueUI : MonoBehaviour
     private TextMeshProUGUI contentText;
     private Button continueButton;
 
-    //private List<string> contentList;
     private List<DialogueEntry> contentList;
     private int contentIndex = 0;
 
@@ -50,16 +49,6 @@ public class DialogueUI : MonoBehaviour
         Debug.Log("Dialogue show method called.Time.timeScale = 0;");
     }
 
-    /*public void Show(string name,string[] content,Action OnDiagoueEnd=null)
-    {
-        nameText.text = name;
-        contentList = new List<string>();
-        contentList.AddRange(content);
-        contentIndex = 0;
-        contentText.text = contentList[0];
-        uiGameObject.SetActive(true);
-        this.OnDialogueEnd = OnDiagoueEnd;
-    }*/
     public void Show(DialogueEntry[] entries, Action OnDialogueEnd = null)
     {
         contentList = new List<DialogueEntry>(entries);
@@ -90,7 +79,6 @@ public class DialogueUI : MonoBehaviour
             return;
         }
         UpdateDialogue();
-        //contentText.text = contentList[contentIndex];
         
     }
 

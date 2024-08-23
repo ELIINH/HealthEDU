@@ -6,6 +6,5 @@ using UnityEngine;
 public class TestScriptObject : ScriptableObject
 {
     public int age;
-    //public string name;
     public string[] list;
 }

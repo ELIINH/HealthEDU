@@ -12,16 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890f329c209954340847801dae695014, type: 3}
   m_Name: Task3
   m_EditorClassIdentifier: 
-  state: 3
-  taskName: "\u7B2C\u4E00\u4E2A"
-  taskDescription: "\u4ECB\u7ECD"
+  state: 0
+  taskName: Brand
+  taskDescription: Desert
   taskID: 3
   startDialogue:
-  - Name: N
-    Content: taskstart
+  - Name: Vita
+    Content: Hello! I heard that living conditions here are tough
+  - Name: Vita
+    Content: especially in this vast desert environment
+  - Name: Vita
+    Content: I'd like to share some daily exercise habits with everyone
+  - Name: Vita
+    Content: which are crucial for surviving in such conditions
+  - Name: Brand
+    Content: Welcome, Vita. Yes, the environment here is very harsh
+  - Name: Brand
+    Content: strong winds, lots of sand, and scarce water sources...
+  - Name: Brand
+    Content: Recently, things have gotten worse
+  - Name: Brand
+    Content: because monsters have taken over our village's exit
+  - Name: Brand
+    Content: so we can't even go out for our daily activities
+  - Name: Vita
+    Content: I'll help you clear out these monsters
+  - Name: Vita
+    Content: In the meantime, try doing some basic exercises
+  - Name: Vita
+    Content: or stretches at home to help maintain your energy and health
   endDialogue:
-  - Name: n
-    Content: taskend
+  - Name: Brand
+    Content: "I\u2019ve heard that the source of this strange situation might be
+      in the city."
+  - Name: Brand
+    Content: 'We can finally go outside freely again. '
+  - Name: Vita
+    Content: I'll continue investigating this
+  - Name: Vita
+    Content: Staying active is important
+  - Name: Vita
+    Content: not just for physical health but also to prepare for any future challenges
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   enemyCountNeed: 3

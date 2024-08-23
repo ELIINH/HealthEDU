@@ -14,17 +14,10 @@ public class SwordWeapon : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        //attackValue = player.GetComponent<PlayerProperty>().attackValue;
 ;
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        Attack();
-    //    }
-    //}
+
 
     public  void Attack()
     {

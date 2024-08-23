@@ -1,0 +1,8 @@
+1:Which habit helps improve sleep quality?:Drinking coffee before bed:Playing with your phone before bed:Listening to light music before bed:Doing intense exercise before bed:3
+2:Why can using electronic devices at night affect our sleep?:It makes us hungrier:It increases physical fatigue:It emits blue light that interferes with sleep:It lowers room temperature:3
+3:How should you arrange the sleep environment to promote good sleep?:Keep the room bright:Keep the room noisy:Pile up toys on the bed:Keep the room quiet and dark:4
+4:Which beverage should you avoid before bedtime?:Milk:Water:Lemon juice:Caffeinated beverages:4
+5:Which bedding helps improve sleep quality?:A comfortable pillow:A loud alarm clock:A bright bedside lamp:Colorful sheets:1
+Why is daytime napping beneficial for children?:It can replace nighttime sleep:It helps children stay energized throughout the day:It makes it harder for children to fall asleep at night:It keeps children awake longer at night:2
+6:What type of book is most conducive to sleep when read in bed?:Exciting adventure stories:Complex science books:Light storybooks:Thrilling horror novels:3
+7:What type of lighting helps improve sleep quality at night?:Bright white lights:Warm yellow lights:Flashing colored lights:Strong red lights:2

@@ -6,20 +6,17 @@ using TMPro;
 
 public class KnowledgeBase : MonoBehaviour
 {
-    // 知识点数据
     string[] knowledgePoints;
-    private int pageIndex = 0; // 当前页索引
-    private int pointsPerPage = 3; // 每页显示的知识点数量
+    private int pageIndex = 0; 
+    private int pointsPerPage = 3; //number of knowledge points per page
 
-    // UI 元素
-    public TextMeshProUGUI[] knowledgeTexts; // 用于显示知识点的 TextMeshProUGUI 数组
-    public Button btnPrevious; // 上一页按钮
-    public Button btnNext; // 下一页按钮
-    public Button btnJump; // 跳转按钮
-    public TMP_InputField jumpInput; // 跳转输入框
-    public TextMeshProUGUI pageIndexText; // 当前页索引显示
-    public Button btnClose; // 关闭按钮 
-    //public TextMeshProUGUI totalPagesText; // 总页数显示
+    public TextMeshProUGUI[] knowledgeTexts;
+    public Button btnPrevious; 
+    public Button btnNext; 
+    public Button btnJump;
+    public TMP_InputField jumpInput; 
+    public TextMeshProUGUI pageIndexText;//page number display
+    public Button btnClose; 
     public GameObject uiContainer;
 
     void Start()
@@ -35,7 +32,6 @@ public class KnowledgeBase : MonoBehaviour
         DisplayPage();
     }
 
-    // 从txt文档中读取知识点
     void LoadKnowledgePoints()
     {
         string filePath = Application.dataPath + "/StreamingAssets/knowledge.txt";
@@ -50,7 +46,6 @@ public class KnowledgeBase : MonoBehaviour
         }
     }
 
-    // 显示当前页的知识点
     void DisplayPage()
     {
         int startIndex = pageIndex * pointsPerPage;
@@ -67,10 +62,9 @@ public class KnowledgeBase : MonoBehaviour
         }
         int totalPages = Mathf.CeilToInt((float)knowledgePoints.Length / pointsPerPage);
         pageIndexText.text = "Page " + (pageIndex + 1) + " of " + totalPages;
-        //totalPagesText.text = "Total Pages: " + totalPages;
     }
 
-    // 切换页面
+
     void ChangePage(int direction)
     {
         pageIndex += direction;
@@ -78,7 +72,6 @@ public class KnowledgeBase : MonoBehaviour
         DisplayPage();
     }
 
-    // 跳转到指定页面
     void JumpToPage()
     {
         int targetPage;

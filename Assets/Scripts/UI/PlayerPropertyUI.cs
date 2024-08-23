@@ -14,15 +14,15 @@ public class PlayerPropertyUI : MonoBehaviour
     private Image hpProgressBar;
     private TextMeshProUGUI hpText;
 
-    private Image energyBar; // 新增的能量进度条
+    private Image energyBar; 
     private TextMeshProUGUI energyText;
 
     private Image levelProgressBar;
     private TextMeshProUGUI levelText;
 
     private GameObject propertyGrid;
-    private GameObject propertyTemplate;
-    private Image weaponIcon;
+    private TextMeshProUGUI propertyText;
+    //private Image weaponIcon;
 
     private PlayerProperty pp;
     private PlayerAttack pa;
@@ -50,17 +50,14 @@ public class PlayerPropertyUI : MonoBehaviour
         levelText = transform.Find("UI/LevelProgressBar/LevelText").GetComponent<TextMeshProUGUI>();
 
         propertyGrid = transform.Find("UI/PropertyGrid").gameObject;
-        propertyTemplate = transform.Find("UI/PropertyGrid/PropertyTemplate").gameObject;
-        weaponIcon = transform.Find("UI/WeaponIcon").GetComponent<Image>();
-
-        propertyTemplate.SetActive(false);
+        propertyText = transform.Find("UI/PropertyGrid/Property").GetComponent<TextMeshProUGUI>();
+ 
 
         GameObject player= GameObject.FindGameObjectWithTag(Tag.PLAYER);
         pp = player.GetComponent<PlayerProperty>();
-        pa = player.GetComponent<PlayerAttack>();
+ 
         UpdatePlayerPropertyUI();
         Show();
-        //Hide();
     }
 
     private void Update()
@@ -82,8 +79,7 @@ public class PlayerPropertyUI : MonoBehaviour
 
     public void UpdatePlayerPropertyUI()
     {
-        hpProgressBar.fillAmount = pp.hpValue / pp.maxHp;
-        //Debug.Log("hpProgressBar.fillAmount: " + hpProgressBar.fillAmount);
+        hpProgressBar.fillAmount = (float)pp.hpValue / pp.maxHp;
         hpText.text = pp.hpValue + "/" + pp.maxHp;
 
         energyBar.fillAmount = pp.energyValue / pp.maxEnergy;
@@ -94,9 +90,7 @@ public class PlayerPropertyUI : MonoBehaviour
 
         ClearGrid();
 
-        AddProperty("饥饿值：" + pp.energyValue);
-        //AddProperty("精神值：" + pp.mentalValue);
-        AddProperty("攻击力：" + pp.attackValue);
+        AddProperty("Attack: " + pp.attackValue);
 
         foreach (var item in pp.propertyDict)
         {
@@ -104,19 +98,13 @@ public class PlayerPropertyUI : MonoBehaviour
             switch (item.Key)
             {
                 case PropertyType.HPValue:
-                    propertyName = "生命值：";
+                    propertyName = "HP: ";
                     break;
                 case PropertyType.EnergyValue:
-                    propertyName = "饥饿值：";
+                    propertyName = "Energy: ";
                     break;
-               // case PropertyType.MentalValue:
-                //    propertyName = "精神值：";
-               //     break;
-                //case PropertyType.SpeedValue:
-                //    propertyName = "速度：";
-                //    break;
                 case PropertyType.AttackValue:
-                    propertyName = "攻击力：";
+                    propertyName = "Attack:";
                     break;
                 default:
                     break;
@@ -128,11 +116,6 @@ public class PlayerPropertyUI : MonoBehaviour
                 sum += item1.value;
             }
             AddProperty(propertyName + sum);
-        }
-
-        if (pa.weaponIcon != null)
-        {
-            weaponIcon.sprite = pa.weaponIcon;
         }
 
     }
@@ -148,10 +131,9 @@ public class PlayerPropertyUI : MonoBehaviour
     }
     private void AddProperty( string propertyStr)
     {
-        GameObject go = GameObject.Instantiate(propertyTemplate);
-        go.SetActive(true);
-        go.transform.SetParent(propertyGrid.transform);
-        go.transform.Find("Property").GetComponent<TextMeshProUGUI>().text = propertyStr;
+        propertyText.text = propertyStr;
+
+
     }
 
     private void Show()

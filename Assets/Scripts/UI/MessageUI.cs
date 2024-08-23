@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MessageUI : MonoBehaviour
 {
-    //µ¥ÀýÄ£Ê½
     public static MessageUI Instance { get; private set; }
     private TextMeshProUGUI messageText;
 

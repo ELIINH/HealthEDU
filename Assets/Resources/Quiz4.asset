@@ -13,20 +13,22 @@ MonoBehaviour:
   m_Name: Quiz4
   m_EditorClassIdentifier: 
   quizID: 4
-  state: 0
+  state: 3
   startDialogue:
-  - Name: qq
-    Content: start
+  - Name: Anna
+    Content: "Vita, you\u2019re truly our savior!"
+  - Name: Anna
+    Content: I have some questions for you about disease revention
   endPassDialogue:
-  - Name: qq
-    Content: endpass
+  - Name: Anna
+    Content: Thank you, VIta
   endFailDialogue:
-  - Name: qq
-    Content: endfail
+  - Name: Anna
+    Content: Try again and you'll probably succeed.
   quizEndDialogue:
-  - Name: qq
-    Content: qiuz end
+  - Name: Anna
+    Content: You are marvelous!
   quizQuestions: []
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
-  questions: {fileID: 4900000, guid: 3093e45bf46848a448cfad7d4318aac6, type: 3}
+  questions: {fileID: 4900000, guid: b7cc3831ee9da0347bda336bd9eb32f8, type: 3}

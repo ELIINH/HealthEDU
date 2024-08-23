@@ -8,11 +8,6 @@ public class QuizNPCObject : InteractableObject
     public string npcName;
     public GameQuizSO gameQuizSO;
 
-    private void Start()
-    {
-       // gameQuizSO.state = GameQuizState.Waiting;
-    }
-
     protected override void Interact()
     {
         Debug.Log("Interact");
@@ -44,7 +39,6 @@ public class QuizNPCObject : InteractableObject
 
     private void OnQuizEnd()
     {
-        //gameQuizSO.CompleteQuiz(passed);
         if (gameQuizSO.state== GameQuizState.Passed)
         {
             DialogueUI.Instance.Show(gameQuizSO.endPassDialogue, OnDialogueEnd);
@@ -62,7 +56,7 @@ public class QuizNPCObject : InteractableObject
             case GameQuizState.Passed:
                 gameQuizSO.EndQuiz();
                 InventoryManager.Instance.AddItem(gameQuizSO.endReward);
-                MessageUI.Instance.Show("quiz“—pass£°");
+                MessageUI.Instance.Show("Quiz passed!");
                 break;
             case GameQuizState.End:
                 break;

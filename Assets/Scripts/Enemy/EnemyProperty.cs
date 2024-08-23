@@ -1,3 +1,5 @@
+//This class manages the enemy's attributes and UI display
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +13,9 @@ public class EnemyProperty : MonoBehaviour
     public float maxHP = 100;
     public int exp = 20;
     public int attackValue = 50;
-    public float detectionRadius = 10f; // ¼ì²âÍæ¼ÒµÄ°ë¾¶
-    public float attackRange = 2f; // ¹¥»÷·¶Î§
-    public float attackCooldown = 0.5f; // ¹¥»÷ÀäÈ´Ê±¼ä
+    public float detectionRadius = 10f; // radius of detects player
+    public float attackRange = 2f; 
+    public float attackCooldown = 0.5f; 
     public int pickableCount = 4;
 
     public Image hpProgressBar;
@@ -28,7 +30,6 @@ public class EnemyProperty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //hpProgressBar = transform.Find("Canvas/HPBar/ProgressBar").GetComponent<Image>();
         UpdataHPBar();
     }
 
@@ -37,7 +38,6 @@ public class EnemyProperty : MonoBehaviour
         if (hpProgressBar != null)
         {
             hpProgressBar.fillAmount = (float)HP / maxHP;
-            //Debug.Log("HP: " + HP + " maxHP: " + maxHP + " fillAmount: " + hpProgressBar.fillAmount);
         }
         else
         {

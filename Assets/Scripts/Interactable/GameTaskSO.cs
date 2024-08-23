@@ -26,22 +26,16 @@ public class GameTaskSO:ScriptableObject
         public string Content;
     }
 
-    public DialogueEntry[] startDialogue; // 修改为 DialogueEntry 数组
+    public DialogueEntry[] startDialogue;
     public DialogueEntry[] endDialogue;
 
     public ItemSO startReward;
     public ItemSO endReward;
+    
 
     public int enemyCountNeed = 10;
 
     public int currentEnemyCount = 0;
-
-  /*  public void Start()
-    {
-        currentEnemyCount = 0;
-        //state = GameTaskState.Executing;
-        EventCenter.OnEnemyDied += OnEnemyDied;
-    }*/
 
     public void TaskStart()
     {
@@ -57,7 +51,7 @@ public class GameTaskSO:ScriptableObject
         if(currentEnemyCount>= enemyCountNeed)
         {
             state = GameTaskState.Completed;
-            MessageUI.Instance.Show("任务完成，请前去领赏！");
+            MessageUI.Instance.Show("Task completed!");
         }
     }
 
@@ -67,7 +61,7 @@ public class GameTaskSO:ScriptableObject
         state = GameTaskState.End;
         EventCenter.OnEnemyDied -= OnEnemyDied;
 
-        // 显示结束对话内容
+        // show end dialogue
         if (endDialogue != null && endDialogue.Length > 0)
         {
             DialogueUI.Instance.Show(endDialogue);

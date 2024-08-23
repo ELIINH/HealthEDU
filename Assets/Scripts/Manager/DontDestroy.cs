@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public static DontDestroy Instance;
 
@@ -19,16 +18,6 @@ public class DontDestroy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 }

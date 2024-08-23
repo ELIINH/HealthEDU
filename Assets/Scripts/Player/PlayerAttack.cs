@@ -9,27 +9,24 @@ public class PlayerAttack : MonoBehaviour
     public Sprite weaponIcon;
     private Animator anim;
 
-    //public int atkValue = 50;
     private NavMeshAgent playerAgent;
     public Transform sword;
     private Collider swordCollider;
     public float attackTime = 0.3f;
-    // Start is called before the first frame update
+
     void Start()
     {
         playerAgent = GetComponent<NavMeshAgent>();
         anim = transform.Find("Character").GetComponent<Animator>();
-        swordCollider = sword.GetComponent<Collider>(); // 初始化碰撞器
+        swordCollider = sword.GetComponent<Collider>(); 
         swordCollider.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (weapon!=null && Input.GetKeyDown(KeyCode.Space))
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //weapon.Attack();
             playerAgent.SetDestination(transform.position);
             swordAttack();
         }
@@ -71,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator EnableColliderTemporarily()
     {
         swordCollider.enabled = true;
-        yield return new WaitForSeconds(attackTime); // 等待一秒
+        yield return new WaitForSeconds(attackTime); 
         swordCollider.enabled = false;
     }
 }

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public PlayerProperty playerProperty;
     public InventoryManager inventoryManager;
     public List<GameTaskSO> gameTasks;
-    public List<GameQuizSO> gameQuizzes; // 添加对 GameQuizSO 的引用
+    public List<GameQuizSO> gameQuizzes; 
 
     private void Awake()
     {
@@ -25,24 +25,22 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // 自动获取 PlayerProperty 和 InventoryManager 组件
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             playerProperty = player.GetComponent<PlayerProperty>();
         }
 
-        // 直接在 Manager 物体上引用 InventoryManager 组件
         inventoryManager = GetComponent<InventoryManager>();
 
         if (playerProperty == null)
         {
-            Debug.LogError("PlayerProperty 组件未找到，请确保场景中有一个带有 PlayerProperty 组件的玩家对象，并且标签为 'Player'。");
+            Debug.LogError("PlayerProperty null");
         }
 
         if (inventoryManager == null)
         {
-            Debug.LogError("InventoryManager 组件未找到，请确保 Manager 物体上有一个带有 InventoryManager 组件的对象。");
+            Debug.LogError("InventoryManager null");
         }
         Debug.Log("awaked");
     }

@@ -15,18 +15,26 @@ MonoBehaviour:
   quizID: 1
   state: 3
   startDialogue:
-  - Name: qq
-    Content: start
+  - Name: Tony
+    Content: Vita, you're about to head out on your own
+  - Name: Tony
+    Content: Make sure to take care of your health
+  - Name: Tony
+    Content: Before you go see the village chief
+  - Name: Tony
+    Content: Let me test your knowledge on nutrition
   endPassDialogue:
-  - Name: qq
-    Content: endpass
+  - Name: Tony
+    Content: You're awesome, Vita.
+  - Name: Tony
+    Content: Continue on your journey.
   endFailDialogue:
-  - Name: qq
-    Content: endfail
+  - Name: Tony
+    Content: I think you need to study a bit more.
   quizEndDialogue:
-  - Name: qq
-    Content: qiuz end
+  - Name: Tony
+    Content: Continue on your journey.
   quizQuestions: []
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
-  questions: {fileID: 4900000, guid: 3093e45bf46848a448cfad7d4318aac6, type: 3}
+  questions: {fileID: 4900000, guid: f5f93b8e7f761f34fabc0071264de611, type: 3}

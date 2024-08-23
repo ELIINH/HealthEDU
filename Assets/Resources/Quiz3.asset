@@ -15,18 +15,19 @@ MonoBehaviour:
   quizID: 3
   state: 0
   startDialogue:
-  - Name: qq
-    Content: start
+  - Name: Lucian
+    Content: "Vita, before you leave, I\u2019d like to ask you some questions about
+      exercise"
   endPassDialogue:
-  - Name: qq
-    Content: endpass
+  - Name: Lucian
+    Content: "Thank you for your advice, Vita! We\u2019ll give it a try."
   endFailDialogue:
-  - Name: qq
-    Content: endfail
+  - Name: Lucian
+    Content: We all still need to learn
   quizEndDialogue:
-  - Name: qq
-    Content: qiuz end
+  - Name: Lucian
+    Content: Good luck with your investigation in the city
   quizQuestions: []
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
-  questions: {fileID: 4900000, guid: 3093e45bf46848a448cfad7d4318aac6, type: 3}
+  questions: {fileID: 4900000, guid: ce8791ec6fec237458a9b5c52b3922be, type: 3}

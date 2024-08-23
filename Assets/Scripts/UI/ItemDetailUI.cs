@@ -16,10 +16,20 @@ public class ItemDetailUI : MonoBehaviour
 
     private ItemSO itemSO;
     private ItemUI itemUI;
-    
+    public static ItemDetailUI Instance { get; private set; }
 
     private void Start()
     {
+        propertyTemplate.SetActive(false);
+        this.gameObject.SetActive(false);
+    }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        Instance = this;
         propertyTemplate.SetActive(false);
         this.gameObject.SetActive(false);
     }
@@ -34,9 +44,9 @@ public class ItemDetailUI : MonoBehaviour
         switch (itemSO.itemType)
         {
             case ItemType.Weapon:
-                type = "武器"; break;
+                type = "Weapon"; break;
             case ItemType.Consumable:
-                type = "可消耗品"; break;
+                type = "Consumable"; break;
         }
 
         iconImage.sprite = itemSO.icon;
@@ -58,20 +68,13 @@ public class ItemDetailUI : MonoBehaviour
             switch (property.propertyType)
             {
                 case PropertyType.HPValue:
-                    propertyName = "生命值：";
+                    propertyName = "HP: ";
                     break;
                 case PropertyType.EnergyValue:
-                    propertyName = "饥饿值：";
+                    propertyName = "Energy: ";
                     break;
-                /*case PropertyType.MentalValue:
-                    propertyName = "精神值：";
-                    break;
-                case PropertyType.SpeedValue:
-                    propertyName = "速度：";
-                    break;
-                */
                 case PropertyType.AttackValue:
-                    propertyName = "攻击力：";
+                    propertyName = "Attack: ";
                     break;
                 default:
                     break;
@@ -81,6 +84,8 @@ public class ItemDetailUI : MonoBehaviour
             GameObject go = GameObject.Instantiate(propertyTemplate);
             go.SetActive(true);
             go.transform.SetParent(propertyGrid.transform);
+
+            go.transform.localScale = Vector3.one;
             go.transform.Find("Property").GetComponent<TextMeshProUGUI>().text = propertyStr;
         }
 

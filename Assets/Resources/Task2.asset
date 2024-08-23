@@ -12,16 +12,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890f329c209954340847801dae695014, type: 3}
   m_Name: Task2
   m_EditorClassIdentifier: 
-  state: 3
-  taskName: "\u7B2C\u4E00\u4E2A"
-  taskDescription: "\u4ECB\u7ECD"
+  state: 0
+  taskName: Chief
+  taskDescription: VIllage
   taskID: 2
   startDialogue:
-  - Name: N
-    Content: taskstart
+  - Name: Vita
+    Content: Village Chief, some abnormal creatures have recently appeared on the
+      island
+  - Name: Vita
+    Content: "They polluting the environment. I\u2019ve already dealt with them."
+  - Name: Village Chief
+    Content: Well done, Vita
+  - Name: Village Chief
+    Content: Recently, the village has also been experiencing some issues
+  - Name: Village Chief
+    Content: Recently, the village has also been experiencing some issues
+  - Name: Village Chief
+    Content: Our day-night cycle has been disrupted by an unknown force
+  - Name: Village Chief
+    Content: throwing the villagers' sleep patterns into chaos
+  - Name: Village Chief
+    Content: You know, good sleep is crucial for health
+  - Name: Village Chief
+    Content: It helps us recover our energy and stay mentally alert
+  - Name: Vita
+    Content: which affects their daily lives. What can I do to help?
+  - Name: Vita
+    Content: I understand. Without enough sleep, people become tired
+  - Name: Village Chief
+    Content: These monsters have been causing a lot of noise and chaos in our resting
+      areas
+  - Name: Village Chief
+    Content: These monsters have been causing a lot of noise and chaos in our resting
+      areas
+  - Name: Village Chief
+    Content: We need your help to clear them out
+  - Name: Village Chief
+    Content: so the village can regain its peace and quiet
   endDialogue:
-  - Name: n
-    Content: taskend
+  - Name: Village Chief
+    Content: Since you cleared out those monsters
+  - Name: Village Chief
+    Content: the village has finally quieted down
+  - Name: Village Chief
+    Content: and people can rest properly again
+  - Name: Village Chief
+    Content: But I've heard that the village in the desert is also facing some issues
+  - Name: Village Chief
+    Content: But I've heard that the village in the desert is also facing some issues
+  - Name: Vita
+    Content: I'll head to the desert immediately to help them get back to normal
+  - Name: Village Chief
+    Content: Follow this path down, and you'll reach the desert
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   enemyCountNeed: 3

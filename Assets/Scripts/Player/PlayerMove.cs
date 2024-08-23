@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        // ¸üÐÂ¶¯»­×´Ì¬
+        //update the animator
         if (animator != null)
         {
             bool isMoving = playerAgent.velocity.magnitude > 0.1f;

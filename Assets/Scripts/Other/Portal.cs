@@ -8,12 +8,12 @@ using static GameQuizSO;
 public class Portal : MonoBehaviour
 {
 
-    public List<GameTaskSO> senceTasks; // 所有任务的列表
+    public List<GameTaskSO> senceTasks; // List of all tasks is this scene
     public List<GameQuizSO> senceQuizzes;
-    public bool isAllTasksCompleted; // 是否所有任务都已完成
+    public bool isAllTasksCompleted;
     public GameObject portalLight;
 
-    [SerializeField] private string targetSceneName; // 目标场景名称
+    [SerializeField] private string targetSceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -42,21 +42,12 @@ public class Portal : MonoBehaviour
         {
             if (AreAllTasksQuizCompleted())
             {
-                // 传送玩家到目标场景
-                //把玩家位置设为传送门位置
+                //Teleport the player to the target scene
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-                //player.transform.position = transform.position;
-                ///player.transform.position = Vector3.zero;
                 if (player.transform.parent != null)
                 {
                     player.transform.parent.position = Vector3.zero;
-                    Debug.Log("parent position set to zero");
                     player.transform.position = Vector3.zero;
-                    //Transform parentTransform = player.transform.parent;
-                   /* foreach (Transform child in parentTransform)
-                    {
-                        child.position = Vector3.zero;
-                    }*/
                     NavMeshAgent navMeshAgent = player.GetComponent<NavMeshAgent>();
                     if (navMeshAgent != null)
                     {
@@ -67,8 +58,7 @@ public class Portal : MonoBehaviour
             }
             else
             {
-                // 显示提示信息
-                MessageUI.Instance.Show("task and quiz not completed");
+                MessageUI.Instance.Show("Complete all tasks and questions first");
             }
         }
     }

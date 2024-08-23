@@ -15,44 +15,46 @@ public class PlayerProperty : MonoBehaviour
     public int currentExp = 0;
     public int attackValue = 10;
 
-    public int energyDecreaseRate = 1; // 每秒减少的能量值
+    public float energyDecreaseRate = 1f; //energy decrease per 2 seconds
     private float energyDecreaseTimer = 0f;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Awake()
     {
         propertyDict = new Dictionary<PropertyType, List<Property>>();
-        
-        //propertyDict.Add(PropertyType.SpeedValue, new List<Property>());
-        //propertyDict.Add(PropertyType.AttackValue, new List<Property>());
-
-        //AddProperty(PropertyType.SpeedValue, 5);
-        //AddProperty(PropertyType.AttackValue, 20);
-
+        animator = GetComponentInChildren<Animator>();
         EventCenter.OnEnemyDied += OnEnemyDied;
     }
 
     void Update()
     {
-        // 每秒减少能量值
+        // decrease energy value per second
         energyDecreaseTimer += Time.deltaTime;
-        if (energyDecreaseTimer >= 1f)
+        if (energyDecreaseTimer >= 2f)
         {
             energyValue -= energyDecreaseRate;
             energyDecreaseTimer = 0f;
 
-            // 确保能量值在0-maxEnergy之间
-
-            energyValue = Mathf.Clamp(energyValue, 0, maxEnergy);
+            //make sure energy value is in the range of 0 to maxEnergy
+            //energyValue = Mathf.Clamp(energyValue, 0, maxEnergy);
+            //hpValue = Mathf.Clamp(hpValue, 0, maxHp);
+            if(energyValue > maxEnergy)
+            {
+                energyValue= maxEnergy;
+            }
+            if (hpValue > maxHp)
+            {
+                hpValue = maxHp;
+            }
             if (energyValue == 0)
             {
                 hpValue -= 5;
             }
-        }
-        // 假设按下 K 键模拟玩家死亡
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Die();
+            if (hpValue == 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -70,13 +72,13 @@ public class PlayerProperty : MonoBehaviour
         {
             case PropertyType.HPValue:
                 hpValue += value;
+                hpValue = Mathf.Clamp(hpValue, 0, maxHp);
                 return;
             case PropertyType.EnergyValue:
                 energyValue += value;
+                energyValue = Mathf.Clamp(energyValue, 0, maxEnergy);
+                
                 return;
-            //case PropertyType.MentalValue:
-             //   mentalValue += value;
-             //   return;
             case PropertyType.AttackValue:
                 attackValue += value;
                 return;
@@ -96,9 +98,6 @@ public class PlayerProperty : MonoBehaviour
             case PropertyType.EnergyValue:
                 energyValue -= value;
                 return;
-            //case PropertyType.MentalValue:
-            //    mentalValue -= value;
-             //   return;
         }
 
         List<Property> list;
@@ -118,7 +117,6 @@ public class PlayerProperty : MonoBehaviour
         {
             currentExp -= level * 30;
             levelUp();
-            //level++;
         }
         PlayerPropertyUI.Instance.UpdatePlayerPropertyUI();
     }
@@ -126,10 +124,11 @@ public class PlayerProperty : MonoBehaviour
     public void levelUp()
     {
         level++;
-        hpValue = 100;
-        energyValue = 100;
+        hpValue = maxHp;
+        energyValue = maxEnergy;
         mentalValue = 100;
         attackValue += 5;
+        MessageUI.Instance.Show("Level UP");
     }
 
     public void TakeDamage(int damage)
@@ -145,8 +144,18 @@ public class PlayerProperty : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Die");
+        //GameManager.Instance.LoadGame();
+
+        MessageUI.Instance.Show("Fail!");
+        GetComponent<Collider>().enabled = false;
+        StartCoroutine(WaitForDeathAnimation());
+    }
+    private IEnumerator WaitForDeathAnimation()
+    {
+        animator.SetTrigger("IsDead");
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         GameManager.Instance.LoadGame();
+        //Destroy(this.gameObject);
     }
 
-    
 }

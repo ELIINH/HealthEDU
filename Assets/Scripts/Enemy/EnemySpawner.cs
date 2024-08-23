@@ -1,3 +1,5 @@
+//Enemies are automatically generated on the map at regular intervals
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

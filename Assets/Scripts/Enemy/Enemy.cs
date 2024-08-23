@@ -1,3 +1,6 @@
+//This is the main enemy behavior control script
+//contains the enemy state machine, movement, attack, and death logic.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +8,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    //正常状态：随机移动+休息
-    //战斗状态
+    //Normal state: random movement(MovingState) + RestingState
+    //FightingState
     public enum EnemyState
     {
         NormalState,
@@ -22,14 +25,12 @@ public class Enemy : MonoBehaviour
     public float restTime = 2;
     private float restTimer = 0;
 
-    public EnemyProperty enemyProperty; // 引用 EnemyProperty
-    
+    public EnemyProperty enemyProperty; 
 
     private float attackTimer = 0;
     private Transform player;
     private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         enemyAgent = GetComponent<NavMeshAgent>();
@@ -37,7 +38,6 @@ public class Enemy : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (state == EnemyState.NormalState)
@@ -65,12 +65,9 @@ public class Enemy : MonoBehaviour
         }
         else if (state == EnemyState.FightingState)
         {
-            //Debug.Log("Fighting");
             if (player != null)
             {
                 enemyAgent.SetDestination(player.position);
-                //Debug.Log("player position: " + player.position);
-                //Debug.Log("Distance: " + enemyAgent.remainingDistance);
                 if (Vector3.Distance(transform.position, player.position) <= enemyProperty.attackRange)
                 {
                     attackTimer += Time.deltaTime;
@@ -101,7 +98,6 @@ public class Enemy : MonoBehaviour
         {
             if (hitCollider.CompareTag("Player"))
             {
-                //Debug.Log("Player Detected");
                 player = hitCollider.transform;
                 state = EnemyState.FightingState;
                 break;
@@ -112,7 +108,6 @@ public class Enemy : MonoBehaviour
     void AttackPlayer()
     {
         animator.SetTrigger("IsAttack");
-        //Debug.Log("isAttack");
         PlayerProperty playerComponent = player.GetComponent<PlayerProperty>();
         if (playerComponent != null)
         {
@@ -130,44 +125,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    /*  private void Die()
-      {
-          GetComponent<Collider>().enabled = false;
-          for (int i = 0; i < enemyProperty.pickableCount; i++)
-          {
-              SpawnPickableItem();
-          }
-          EventCenter.EnemyDied(this);
-          Destroy(this.gameObject);
-      }*/
 
     private void Die()
     {
-        // 播放死亡动画
         animator.SetTrigger("IsDead");
-
-        // 禁用碰撞器
         GetComponent<Collider>().enabled = false;
-
-        // 开始协程等待动画播放完成后销毁物体
         StartCoroutine(WaitForDeathAnimation());
     }
 
     private IEnumerator WaitForDeathAnimation()
     {
-        // 等待死亡动画播放完成
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-
-        // 生成可拾取物品
         for (int i = 0; i < enemyProperty.pickableCount; i++)
         {
             SpawnPickableItem();
         }
-
-        // 触发敌人死亡事件
         EventCenter.EnemyDied(this);
-
-        // 销毁物体
         Destroy(this.gameObject);
     }
     private void SpawnPickableItem()

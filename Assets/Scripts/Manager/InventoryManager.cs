@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
-using static UnityEditor.Timeline.Actions.MenuPriority;
+//using static UnityEditor.Progress;
+//using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class InventoryManager : MonoBehaviour
 {
-    //单例模式
     public static InventoryManager Instance { get; private set; }
 
     private void Awake()
@@ -34,7 +33,7 @@ public class InventoryManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 场景加载完成后更新 InventoryUI
+        // Update InventoryUI when the scene is loaded
         InventoryUI.Instance.UpdateInventory(itemList);
     }
     public void AddItem(ItemSO item)
@@ -54,7 +53,7 @@ public class InventoryManager : MonoBehaviour
         List<ItemData> items = new List<ItemData>();
         foreach (var item in itemList)
         {
-            items.Add(new ItemData { itemName = item.name, quantity = 1 }); // 假设每个物品的数量为1
+            items.Add(new ItemData { itemName = item.name, quantity = 1 }); 
         }
         return items;
     }
@@ -64,15 +63,14 @@ public class InventoryManager : MonoBehaviour
         List<ItemSO> loadedItems = new List<ItemSO>();
         foreach (var itemData in items)
         {
-            ItemSO item = Resources.Load<ItemSO>("Items/" + itemData.itemName); // 假设物品资源在 "Resources/Items" 文件夹中
+            ItemSO item = Resources.Load<ItemSO>("Items/" + itemData.itemName); 
+            // Item Resources are in "Resources/Items" folder
             if (item != null)
             {
                 itemList.Add(item);
                 loadedItems.Add(item);
-                //UnityEngine.Debug.Log("加载物品：" + item.name);
             }
         }
-        //InventoryUI.Instance.UpdateInventory(loadedItems);
     }
 
 }

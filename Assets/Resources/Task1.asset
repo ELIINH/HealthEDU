@@ -13,15 +13,52 @@ MonoBehaviour:
   m_Name: Task1
   m_EditorClassIdentifier: 
   state: 3
-  taskName: "\u7B2C\u4E00\u4E2A"
-  taskDescription: "\u4ECB\u7ECD"
+  taskName: Grandpa
+  taskDescription: island
   taskID: 1
   startDialogue:
-  - Name: N
-    Content: taskstart
+  - Name: Grandfather
+    Content: Vita, you're here.
+  - Name: Vita
+    Content: 'Grandpa, what''s going on? '
+  - Name: Grandfather
+    Content: Some strange creatures have recently appeared on the island
+  - Name: Grandfather
+    Content: "and they\u2019ve polluted the once abundant water sources."
+  - Name: Vita
+    Content: Grandpa, what can we do to stop them?
+  - Name: Grandfather
+    Content: You need to defeat these abnormal creatures to protect our water source.
+  - Name: Grandfather
+    Content: The fruits and vegetables around the water source are vital to our health,
+  - Name: Grandfather
+    Content: ' providing essential nutrients such as vitamins, minerals, antioxidants,'
+  - Name: Grandfather
+    Content: and dietary fiber. They are the foundation of our survival and well-being.
+  - Name: Grandfather
+    Content: They are the foundation of our survival and well-being.
+  - Name: Vita
+    Content: "I understand, protecting these nutrient-rich foods means protecting
+      everyone\u2019s health."
+  - Name: Grandfather
+    Content: Go ahead, defeat 3 monsters.
+  - Name: Grandfather
+    Content: Remember, press the spacebar to attack and press B to check your inventory.
   endDialogue:
-  - Name: n
-    Content: taskend
+  - Name: Grandfather
+    Content: We should all consume fruits and vegetables every day
+  - Name: Grandfather
+    Content: ' to ensure a balanced diet and maintain our health. '
+  - Name: Grandfather
+    Content: Tell him about the situation on the island and how we can maintain our
+      health
+  - Name: Grandfather
+    Content: through proper nutrition and a healthy diet.
+  - Name: Grandfather
+    Content: Follow the steps down, and you'll see the path to the village.
+  - Name: Vita
+    Content: Okay, Grandpa. I'll make sure everyone understands the importance of
+      nutrition.
   startReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   endReward: {fileID: 11400000, guid: aa2b7b30d3db61348bf623a8155e0677, type: 2}
   enemyCountNeed: 3

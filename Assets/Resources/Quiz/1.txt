@@ -1,0 +1,9 @@
+1:Which food can help boost the immune system?:Candy:French fries:Oranges:Hamburgers:3
+2:Which food is high in calcium and beneficial for bone health?: Milk:Cola:Bread:Beef:1
+3:To maintain a healthy diet, what should you eat more of?:A lot of red meat:A lot of processed foods:A variety of fruits and vegetables:High-sugar drinks:3
+4:Which food helps improve vision?:Potato chips:Cake:Carrots:Hamburgers:3
+5:Which food contains a large amount of Omega-3 fatty acids, which are particularly beneficial for heart health?:Fried foods:Candy:Fish, such as salmon and mackerel:Bread:3
+6:Which food category is the main source of energy among the five major food groups?:Protein:Grains:Dairy:Fat:2
+7:Which of the following foods is high in protein?:Eggs:Apples:Bread:Potato chips:1
+8:What should a balanced dinner include?:Only vegetables and meat:Vegetables, fruits, whole grains, and protein:Only whole grains and dairy:Only fat and protein:2
+9:What should you do before exercising to prevent injury?:Warm up:Drink plenty of water:Eat high-protein foods:Start high-intensity training immediately:1

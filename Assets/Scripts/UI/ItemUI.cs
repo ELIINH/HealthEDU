@@ -18,9 +18,9 @@ public class ItemUI : MonoBehaviour
         switch (itemSO.itemType)
         {
             case ItemType.Weapon:
-                type = "ÎäÆ÷"; break;
+                type = "Weapon"; break;
             case ItemType.Consumable:
-                type = "¿ÉÏûºÄÆ·"; break;
+                type = "Consumable"; break;
         }
 
         iconImage.sprite = itemSO.icon;

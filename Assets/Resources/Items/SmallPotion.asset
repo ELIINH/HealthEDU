@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f62f96af69be5b458c5a84bf7f17080, type: 3}
+  m_Name: SmallPotion
+  m_EditorClassIdentifier: 
+  id: 3
+  name: SmallPotion
+  itemType: 1
+  description: Recover HP
+  propertyList:
+  - propertyType: 0
+    value: 20
+  icon: {fileID: 21300000, guid: a73f7bd6281a13543a765922ae2dd78f, type: 3}
+  prefab: {fileID: 3983813268400723696, guid: 3bf25ebc60b87ef479ebadabedd26c8b, type: 3}
