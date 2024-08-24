@@ -97,35 +97,35 @@ public class QuizAnswer : MonoBehaviour
 
 
     void TextCsv(TextAsset questions)
-{
-    if (questions == null)
     {
-        Debug.LogError("Questions TextAsset is null");
-        return;
-    }
-
-    string[] allLineText = questions.text.Split('\n');
-    Debug.Log("Total questions: " + allLineText.Length);
-
-    ArrayX = new string[allLineText.Length][];
-    isAnserList.Clear();
-
-    for (int i = 0; i < allLineText.Length; i++)
-    {
-        string line = allLineText[i].Trim();
-        if (!string.IsNullOrEmpty(line))
+        if (questions == null)
         {
-            ArrayX[i] = line.Split(':');
-            isAnserList.Add(false);
+            Debug.LogError("Questions TextAsset is null");
+            return;
         }
+
+        string[] allLineText = questions.text.Split('\n');
+        Debug.Log("Total questions: " + allLineText.Length);
+
+        ArrayX = new string[allLineText.Length][];
+        isAnserList.Clear();
+
+        for (int i = 0; i < allLineText.Length; i++)
+        {
+            string line = allLineText[i].Trim();
+            if (!string.IsNullOrEmpty(line))
+            {
+                ArrayX[i] = line.Split(':');
+                isAnserList.Add(false);
+            }
+        }
+
+            //remove null elements
+            ArrayX = ArrayX.Where(x => x != null).ToArray();
+
+        topicMax = ArrayX.Length;
+        Debug.Log("Processed questions: " + topicMax);
     }
-
-        //remove null elements
-        ArrayX = ArrayX.Where(x => x != null).ToArray();
-
-    topicMax = ArrayX.Length;
-    Debug.Log("Processed questions: " + topicMax);
-}
 
     void LoadAnswer()
     {
