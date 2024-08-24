@@ -5,7 +5,7 @@ Win64: https://github.com/ELIINH/HealthEDU/releases/tag/HealthLand1.0
 
 # Player control features
 Click the left mouse button to move.  
-Press B to open the backpack
+Press B to open the Inventory  
 Click items to pick them up.  
 Press space to attack
 
