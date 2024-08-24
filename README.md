@@ -7,7 +7,7 @@ Win64: https://github.com/ELIINH/HealthEDU/releases/tag/HealthLand1.0
 Click the left mouse button to move.  
 Press B to open the backpack
 Click items to pick them up.  
-Press space to fighe
+Press space to attack
 
 
 # External assets:  
